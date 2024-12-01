@@ -1,50 +1,62 @@
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-nav ul {
     list-style: none;
-    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-main {
+header{
+    
     padding: 20px;
-}
-
-section {
-    background: #ffffff;
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-footer {
+    background-color:rgb(5, 142, 240) ;
     text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: #fff;
+}
+
+#sobre{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    font-size: 28px;
+}
+
+.cta{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    font-size: 32px;
+    width: 600px;
+}
+
+.cta2{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: baseline;
+    left: 300px;
+    top: 400px;
+    font-size: 28px;
+    width: 600px;
+    font-size: 20px;
+}
+
+.cta2 h3{font-weight: 300; font-size: 18px;}
+.cta2 p{font-weight: 100; font-size: 15px;}
+
+.main-div{border: 1px solid #fff;}
+
+#back{
+    background-image: url(./istockphoto-1452604857-612x612.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    margin-top: 2px;
+   
 }
