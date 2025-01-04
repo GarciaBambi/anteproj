@@ -1,142 +1,260 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-ao">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Estilizado</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AnteProject</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=send" />
 </head>
 <body>
+
     <header>
-        <h1>AnteProject IA Grupo 8</h1>
-    </header>
-    
-    <main id="back">
-        <div class="main-div">
-            <section id="sobre">
-                <h2>AntePoject IA</h2><br>
-                
-            </section>
-            <div class="cta">
-                <p>Pesquise sobre qualquer tema, para gerar um anteprojecto</p>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="./anteproj.png" alt="Logotipo"></a>
             </div>
-            <div class="cta2">
-                <h3>Dica:</h3><br>
-                <p> Ao pesquisar coloque de preferência, o tema, área a que está relacionado e o nível academico</p>
-            </div>
+            <nav>
+                <a href="sobre.html">Sobre</a> |
+                <a href="#">Seu Feedback</a>
+            </nav>
         </div>
+    </header>
+
+    <main class="main container">
+        <section class="identificador">
+            <img src="./AnteProjet.png" alt="Identificador">
+            <h2>O seu gerador de Anteprojetos</h2>
+        </section>
+
+        <section class="resultado">
+            <p style="color: #66666608;">...</p>
+        </section>
+
+        <section class="search-bar">
+            <label for="tema"></label>
+            <input type="text" id="tema" name="campo-de-texto" placeholder="Digite o seu tema aqui...">
+            <button id="buscar"><span class="material-symbols-outlined"> send </span></button>
+        </section>
     </main>
-    
+
     <footer>
-      
+        <div id="simple" class="line"></div>
+        <p>Anteprojet@2024</p>
     </footer>
+    
 </body>
-</html>
 
 <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
+
+    // Inicializa o chatbot sem o botão flutuante
     Chatbot.init({
         chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
         apiHost: "http://localhost:3000",
-        chatflowConfig: {
-            /* Chatflow Config */
-        },
-        observersConfig: {
-            /* Observers Config */
-        },
+        chatflowConfig: {},
+        observersConfig: {},
         theme: {
-            button: {
-                backgroundColor: '#3B81F6',
-                right: 20,
-                bottom: 20,
-                size: 48,
-                dragAndDrop: true,
-                iconColor: 'white',
-                customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                autoWindowOpen: {
-                    autoOpen: true,
-                    openDelay: 2,
-                    autoOpenOnMobile: false
-                }
-            },
-            tooltip: {
-                showTooltip: true,
-                tooltipMessage: 'Gerar Ante-projecto 👋!',
-                tooltipBackgroundColor: 'black',
-                tooltipTextColor: 'white',
-                tooltipFontSize: 16
-            },
-            disclaimer: {
-                title: 'Disclaimer',
-                message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
-                textColor: 'black',
-                buttonColor: '#3b82f6',
-                buttonText: 'Start Chatting',
-                buttonTextColor: 'white',
-                blurredBackgroundColor: 'rgba(0, 0, 0, 0.4)',
-                backgroundColor: 'white'
-            },
-            customCSS: ``,
+            button: {backgroundColor: '#fff', size: 1,}, // Remove o botão flutuante
             chatWindow: {
                 showTitle: true,
                 showAgentMessages: true,
-                title: 'AnteProjIA',
+                title: 'Antproject IA',
                 titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                welcomeMessage: 'Olá, Eu sou um Gerardor de Ante-projecto',
-                errorMessage: 'This is a custom error message',
+                welcomeMessage: 'IA para gerar Antiprojetos',
+                errorMessage: 'Erro ao se comunicar com o servidor',
                 backgroundColor: '#ffffff',
-                backgroundImage: 'enter image path or link',
-                height: 500,
-                width: 500,
-                fontSize: 16,
-                starterPrompts: [
-                    "O que posso Ajudar?",
-                    "Quem eu Só?"
-                ],
-                starterPromptFontSize: 15,
-                clearChatOnReload: false,
-                sourceDocsTitle: 'Sources:',
-                renderHTML: true,
+                fontSize: 16,               
                 botMessage: {
                     backgroundColor: '#f7f8ff',
                     textColor: '#303235',
-                    showAvatar: true,
-                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
+                    showAvatar: true
                 },
                 userMessage: {
                     backgroundColor: '#3B81F6',
                     textColor: '#ffffff',
-                    showAvatar: true,
-                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
-                },
-                textInput: {
-                    placeholder: 'Digite sua pergunta',
-                    backgroundColor: '#ffffff',
-                    textColor: '#303235',
-                    sendButtonColor: '#3B81F6',
-                    maxChars: 500,
-                    maxCharsWarningMessage: 'Tamanho máximo de caracteres é 500.',
-                    autoFocus: true,
-                    sendMessageSound: true,
-                    sendSoundLocation: 'send_message.mp3',
-                    receiveMessageSound: true,
-                    receiveSoundLocation: 'receive_message.mp3'
-                },
-                feedback: {
-                    color: '#303235'
-                },
-                dateTimeToggle: {
-                    date: true,
-                    time: true
-                },
-                footer: {
-                    textColor: '#303235',
-                    text: 'Powered by',
-                    company: 'Flowise',
-                    companyLink: 'https://flowiseai.com'
+                    showAvatar: true
                 }
             }
         }
-    })
+    });
+
+    // Referências aos elementos da página
+    const inputTema = document.getElementById('tema');
+    const btnBuscar = document.getElementById('buscar');
+    const resultado = document.querySelector('.resultado');
+
+    // Função para enviar o tema e obter o resultado
+    async function gerarAnteprojeto() {
+        const tema = inputTema.value.trim();
+
+        if (!tema) {
+            alert('Por favor, insira um tema.');
+            return;
+        }
+
+        // Exibe uma mensagem de carregamento
+        resultado.innerHTML = "<p> Gerando anteprojeto, por favor aguarde...</p>";
+
+        try {
+            // Faz uma chamada para o chatbot
+            const response = await fetch("http://localhost:3000/api/message", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
+                    question: tema
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data?.message) {
+                // Atualiza a seção com o resultado do chatbot
+                resultado.innerHTML = `
+                    <h1>Tema:</h1>
+                    <p>${tema}</p>
+                    <h1>Resultado:</h1>
+                    <p>${data.message}</p>
+                `;
+            } else {
+                resultado.innerHTML = `<p>Erro ao gerar o anteprojeto. Tente novamente.</p>`;
+            }
+        } catch (error) {
+            resultado.innerHTML = `<p>Erro: ${error.message}</p>`;
+        }
+    }
+
+    // Evento de clique no botão "Gerar"
+    btnBuscar.addEventListener('click', gerarAnteprojeto);
+
+    // Evento de pressionar Enter no campo de entrada
+    inputTema.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            gerarAnteprojeto();
+        }
+    });
 </script>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnteProject</title>
+    <link rel="stylesheet" href="./style-update.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=send" />
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./anteproj.png" alt="Logotipo">
+            </div>
+            <nav>
+                <a href="#">Sobre</a> |
+                <a href="#">Seu Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main container">
+        <section class="identificador">
+            <img src="./AnteProjet.png" alt="Identificador">
+            <h2>O seu gerador de Anteprojetos</h2>
+        </section>
+
+        <section class="resultado">
+            
+        </section>
+
+        <section class="search-bar">
+            <label for="tema"></label>
+            <input type="text" id="tema" name="campo-de-texto" placeholder="Digite o seu tema aqui...">
+            <button id="buscar"><span class="material-symbols-outlined"> send </span></button>
+        </section>
+    </main>
+
+    <footer>
+        <div id="simple" class="line"></div>
+        <p>Anteprojet@2024</p>
+    </footer>
+    
+</body>
+
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
+
+    // Inicializa o chatbot
+    Chatbot.init({
+        chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
+        apiHost: "http://localhost:3000",
+        chatflowConfig: {},
+        observersConfig: {},
+        theme: { /* Configurações do tema */ }
+    });
+
+    // Referências aos elementos da página
+    const inputTema = document.getElementById('tema');
+    const btnBuscar = document.getElementById('buscar');
+    const resultado = document.querySelector('.resultado ');
+
+    // Função para enviar o tema e obter o resultado
+    async function gerarAnteprojeto() {
+        const tema = inputTema.value.trim();
+
+        if (!tema) {
+            alert('Por favor, insira um tema.');
+            return;
+        }
+
+        // Exibe uma mensagem de carregamento
+        resultado.innerHTML = "<p>Gerando anteprojeto, por favor aguarde...</p>";
+
+        try {
+            // Faz uma chamada para o chatbot
+            const response = await fetch("http://localhost:3000/api/message", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
+                    question: tema
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data?.message) {
+                // Atualiza a seção com o resultado do chatbot
+                resultado.innerHTML = `
+                    <h1>Tema:</h1>
+                    <p>${tema}</p>
+                    <h1>Resultado:</h1>
+                    <p>${data.message}</p>
+                `;
+            } else {
+                resultado.innerHTML = `<p>Erro ao gerar o anteprojeto. Tente novamente.</p>`;
+            }
+        } catch (error) {
+            resultado.innerHTML = `<p>Erro: ${error.message}</p>`;
+        }
+    }
+
+    // Evento de clique no botão "Gerar"
+    btnBuscar.addEventListener('click', gerarAnteprojeto);
+
+    // Evento de pressionar Enter no campo de entrada
+    inputTema.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            gerarAnteprojeto();
+        }
+    });
+</script>
+
+</html>
+
