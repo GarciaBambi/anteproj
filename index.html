@@ -25,28 +25,11 @@
             <img src="./AnteProjet.png" alt="Identificador">
             <h2>O seu gerador de Anteprojetos</h2>
         </section>
-        <!--
-         <section class="resultado">
-            <p style="color: #66666608;">...</p>
-        </section>
-
-        <section class="search-bar">
-           <label for="tema"></label>
-            <input type="text" id="tema" name="campo-de-texto" placeholder="Digite o seu tema aqui...">
-            <button id="buscar"><span class="material-symbols-outlined"> send </span></button>
+        
             
-            
-            <flowise-fullchatbot></flowise-fullchatbot>
-            <script type="module">
-                import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-                Chatbot.initFull({
-                    chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
-                    apiHost: "http://localhost:3000",
-                })
-            </script>-->
-
-            
-        </section> 
+        <div class="btn-link">
+            <a href="http://localhost:3000/chatbot/bade9e7c-b15f-4b7d-9be4-aea75187d646"> Começar a gerar</a>
+        </div>
     </main>
 
     <!-- <footer>
@@ -56,150 +39,14 @@
     
 </body>
 
-<!--<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
 
-    // Inicializa o chatbot sem o botão flutuante
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
         chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
         apiHost: "http://localhost:3000",
-        chatflowConfig: {},
-        observersConfig: {},
-        theme: {
-            button: {backgroundColor: '#fff', size: 1,}, // Remove o botão flutuante
-            chatWindow: {
-                showTitle: true,
-                showAgentMessages: true,
-                title: 'Antproject IA',
-                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-                welcomeMessage: 'IA para gerar Antiprojetos',
-                errorMessage: 'Erro ao se comunicar com o servidor',
-                backgroundColor: '#ffffff',
-                fontSize: 16,               
-                botMessage: {
-                    backgroundColor: '#f7f8ff',
-                    textColor: '#303235',
-                    showAvatar: true
-                },
-                userMessage: {
-                    backgroundColor: '#3B81F6',
-                    textColor: '#ffffff',
-                    showAvatar: true
-                }
-            }
-        }
-    });
-
-    // Referências aos elementos da página
-    const inputTema = document.getElementById('tema');
-    const btnBuscar = document.getElementById('buscar');
-    const resultado = document.querySelector('.resultado');
-
-    // Função para enviar o tema e obter o resultado
-    async function gerarAnteprojeto() {
-        const tema = inputTema.value.trim();
-
-        if (!tema) {
-            alert('Por favor, insira um tema.');
-            return;
-        }
-
-        // Exibe uma mensagem de carregamento
-        resultado.innerHTML = "<p> Gerando anteprojeto, por favor aguarde...</p>";
-
-        try {
-            // Faz uma chamada para o chatbot
-            const response = await fetch("http://localhost:3000/api/message", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
-                    question: tema
-                })
-            });
-
-            const data = await response.json();
-
-            if (response.ok && data?.message) {
-                // Atualiza a seção com o resultado do chatbot
-                resultado.innerHTML = `
-                    <h1>Tema:</h1>
-                    <p>${tema}</p>
-                    <h1>Resultado:</h1>
-                    <p>${data.message}</p>
-                `;
-            } else {
-                resultado.innerHTML = `<p>Erro ao gerar o anteprojeto. Tente novamente.</p>`;
-            }
-        } catch (error) {
-            resultado.innerHTML = `<p>Erro: ${error.message}</p>`;
-        }
-    }
-
-    // Evento de clique no botão "Gerar"
-    btnBuscar.addEventListener('click', gerarAnteprojeto);
-
-    // Evento de pressionar Enter no campo de entrada
-    inputTema.addEventListener('keypress', (event) => {
-        if (event.key === 'Enter') {
-            gerarAnteprojeto();
-        }
-    });
-</script>-->
-
-
-<flowise-fullchatbot></flowise-fullchatbot>
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
-
-    // Inicializa o chatbot com ajustes de estilização
-    Chatbot.initFull({
-        chatflowid: "bade9e7c-b15f-4b7d-9be4-aea75187d646",
-        apiHost: "http://localhost:3000",
-        theme: {
-            chatWindow: {
-                width: '500px', // Largura da janela do chatbot
-                height: '700px', // Altura da janela do chatbot
-                backgroundColor: '#', // Cor de fundo da janela do chatbot
-                borderRadius: '10px', // Bordas arredondadas
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Sombra da janela
-                showTitle: true, // Exibe o título
-                title: 'Antproject IA', // Texto do título
-                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg', // Avatar no título
-                welcomeMessage: 'Bem-vindo ao gerador de anteprojetos!', // Mensagem inicial
-                errorMessage: 'Erro ao se comunicar com o servidor.', // Mensagem de erro
-                fontSize: 16, // Tamanho da fonte
-                botMessage: {
-                    backgroundColor: '#036', // Cor de fundo das mensagens do bot
-                    textColor: '#ffffff', // Cor do texto das mensagens do bot
-                    showAvatar: true // Mostra avatar do bot
-                },
-                userMessage: {
-                    backgroundColor: '', // Cor de fundo das mensagens do usuário
-                    textColor: '#fff', // Cor do texto das mensagens do usuário
-                    showAvatar: false // Esconde avatar do usuário
-                }
-            },
-            button: {
-                backgroundColor: '#003366', // Cor de fundo do botão
-                textColor: '#ffffff', // Cor do texto do botão
-                size: 'medium' // Tamanho do botão
-            }
-        }
-    });
-
-    // Após a inicialização do chatbot, altera a cor do título e o fundo do título
-    window.addEventListener('load', () => {
-        const titleElement = document.querySelector('.chat-window-header .chat-title');
-        if (titleElement) {
-            titleElement.style.color = 'red'; // Altera a cor do título para vermelho
-            titleElement.style.backgroundColor = 'white'; // Define o fundo branco para o título
-        }
-    });
+    })
 </script>
-
-
-
 
 </html>
 

@@ -93,3 +93,20 @@ button {background-color: none; outline: none;
     line-height: 1.8;
 }
 
+.btn-link a{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 430px;
+    top: 40px;
+    background-color: #003366;
+    width: 200px;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 15px;
+}
+
+
+
